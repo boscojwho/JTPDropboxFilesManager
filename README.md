@@ -2,9 +2,9 @@ JTPDropboxFilesManager
 ======================
 
 Summary:
-A wrapper class for Dropbox's Sync API for iOS that handles asynchronous, atomic CRUD operations with an easy-to-use API. This class is currently used in Jot – Refined Text Editor (www.jot-app.com).
+A wrapper class for Dropbox's Sync API for iOS that handles asynchronous, atomic CRUD operations with an easy-to-use API. JTPDropboxFilesManager allows for lighter view controllers. This class is currently used in Jot – Refined Text Editor (www.jot-app.com).
 
- JTPDropboxFilesManager is a controller class that deals with the fact that, at any given time, there may be multiple DBFile instances that are downloading, uploading or idle. Its purpose is to prevent erroneous overwrites, conflicted copies, and data corruption. This class is intended to be used by multiple classes that range from Dropbox directory controllers to Text Kit model/view classes.
+ JTPDropboxFilesManager is a controller class that deals with the fact that, at any given time, there may be multiple DBFile instances that are downloading, uploading or idle. Its purpose is to prevent erroneous overwrites, conflicted copies, and data corruption. Additionally, this class ensures that any instance of DBFile is the newest version before it is returned to the caller. This class is intended to be used by multiple classes that range from Dropbox directory controllers to Text Kit model/view classes.
  
  @discussion Typically, a user will open, edit, and close a file, in that order. In such a scenario, managing read/write operations is relatively simple. However, more often than not, the user may do things differently.
  
